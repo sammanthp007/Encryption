@@ -49,7 +49,12 @@ $sender_agent = find_agent_by_id($id=$message['sender_id']);
 $sender = db_fetch_assoc($sender_agent);
 $message_text = $message["cipher_text"];
 $signature = $message["signature"];
-$validity_text = verify_signature($message_text, $signature, $sender['public_key']);
+$validity = verify_signature($message_text, $signature, $sender['public_key']);
+if ($validity == 1) {
+    $validity_text = "Valid";
+} else {
+    $validity_text = "Not valid";
+}
 ?>
         <tr>
           <td><?php echo h(strftime('%b %d, %Y at %H:%M', $created_at)); ?></td>

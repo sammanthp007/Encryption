@@ -35,9 +35,9 @@ The following **required** functionality is completed:
 
 7\. Agent Messages
   * [x]  Required: Repair the dropbox code
-  * [ ]  Required: Repair the messages area
-  * [ ]  Required: Display encrypted messages for all agents
-  * [ ]  Required: Messages indicate whether the message signature is valid
+  * [x]  Required: Repair the messages area
+  * [x]  Required: Display encrypted messages for all agents
+  * [x]  Required: Messages indicate whether the message signature is valid
   * [ ]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
