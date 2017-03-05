@@ -55,14 +55,6 @@
     <link rel="stylesheet" media="all" href="<?php echo DOC_ROOT . '/includes/styles.css'; ?>" />
   </head>
   <body>
-<?php 
-  echo $id;
-  //foreach ($sender_agent as $det) {
-    //  echo $det; 
-    // }
-    echo h($plaintext);
-  echo $sender_agent[codename];
-?>
     <a href="<?php echo url_for('/agents/index.php'); ?>">Back to List</a>
     <br/>
 

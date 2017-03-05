@@ -41,8 +41,8 @@ The following **required** functionality is completed:
   * [x]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
-  * [ ]  Required: Decrypt as many email messages as possible
-  * [ ]  Required: Identify the double agent: ____________________
+  * [x]  Required: Decrypt as many email messages as possible
+  * [x]  Required: Identify the double agent: Natasha. Tried to blame Austin_
 
 The following objectives are **optional**:
 
