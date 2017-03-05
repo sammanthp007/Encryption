@@ -58,8 +58,16 @@ const PUBLIC_KEY_CONFIG = array(
 );
 
 function generate_keys($config=PUBLIC_KEY_CONFIG) {
-	$private_key = 'Ha ha!';
-	$public_key = 'Ho ho!';
+    // Create a public private key pair
+    
+
+    // extract private key from the pair
+    
+
+    // extract public key from the pair
+
+
+    // send an array of private key and public key
 
 	return array('private' => $private_key, 'public' => $public_key);
 }
