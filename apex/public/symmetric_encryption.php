@@ -23,9 +23,7 @@
       // This is a decode request
       $cipher_text = isset($_POST['cipher_text']) ? $_POST['cipher_text'] : nil;
       $decode_key = isset($_POST['decode_key']) ? $_POST['decode_key'] : nil;
-      echo $cipher_text, $decode_key;
       $decrypted_text = key_decrypt($cipher_text, $decode_key);
-      echo $decrypted_text;
     
     }
   }

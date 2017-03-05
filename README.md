@@ -7,11 +7,13 @@ Time spent: **X** hours spent in total
 The following **required** functionality is completed:
 
 1\. Symmetric Encrypt/Decrypt
-  * [ ]  Required: Repair the symmetric encrypt and decrypt code
+  * [x]  Required: Repair the symmetric encrypt and decrypt code
 
 2\. Encrypted Message 1
-  * [ ]  Required: Decrypt the government message
-  * [ ]  Required: Encrypt a response and include in this README
+  * [x]  Required: Decrypt the government message:
+  I heard about your current situation. Do you know who hacked APEX? -- The Chairman
+  * [x]  Required: Encrypt a response and include in this README
+  +EoN2h1bD20VpPlCpQt9Mz2iwPdWVkeVoS7dmbSloayvO9R8Y9CJpLogoVYBJ3G2
 
 3\. Generate Public-Private Keys
   * [ ]  Required: Repair the key generator code
