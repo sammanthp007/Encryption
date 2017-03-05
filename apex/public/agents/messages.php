@@ -1,16 +1,16 @@
 <?php
 
-  require_once('../../private/initialize.php');
+require_once('../../private/initialize.php');
 
-  if(!isset($_GET['id'])) {
+if(!isset($_GET['id'])) {
     redirect_to('index.php');
-  }
+}
 
-  $id = $_GET['id'];
-  $agent_result = find_agent_by_id($id);
-  $agent = db_fetch_assoc($agent_result);
+$id = $_GET['id'];
+$agent_result = find_agent_by_id($id);
+$agent = db_fetch_assoc($agent_result);
 
-  $message_result = find_messages_for($agent['id']);
+$message_result = find_messages_for($agent['id']);
 ?>
 
 <!doctype html>
@@ -23,16 +23,16 @@
     <link rel="stylesheet" media="all" href="<?php echo DOC_ROOT . '/includes/styles.css'; ?>" />
   </head>
   <body>
-    
+
     <a href="<?php echo url_for('/agents/index.php') ?>">Back to List</a>
     <br/>
 
     <h1>Messages for <?php echo h($agent['codename']); ?></h1>
-    
+
     <?php if($current_user['id'] == $agent['id']) { ?>
       <p>Your messages are automatically decrypted using your private key.</p>
     <?php } ?>
-    
+
     <table>
       <tr>
         <th>Date</th>
@@ -41,16 +41,16 @@
         <th>Message</th>
         <th>Signature</th>
       </tr>
-      
+
       <?php while($message = db_fetch_assoc($message_result)) { ?>
-        <?php
-          $created_at = strtotime($message['created_at']);
-          
-          // Oooops.
-          // My finger accidentally hit the delete-key.
-          // Sorry, APEX!!!
-          
-        ?>
+<?php
+$created_at = strtotime($message['created_at']);
+$sender_agent = find_agent_by_id($id=$message['sender_id']);
+$sender = db_fetch_assoc($sender_agent);
+$message_text = $message["cipher_text"];
+$signature = $message["signature"];
+$validity_text = verify_signature($message_text, $signature, $sender['public_key']);
+?>
         <tr>
           <td><?php echo h(strftime('%b %d, %Y at %H:%M', $created_at)); ?></td>
           <td><?php echo h($agent['codename']); ?></td>
@@ -60,6 +60,6 @@
         </tr>
       <?php } ?>
     </table>
-    
+
   </body>
 </html>

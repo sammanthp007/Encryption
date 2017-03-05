@@ -28,13 +28,13 @@ The following **required** functionality is completed:
 6\. Encrypted Message 2
   * [x]  Required: Decrypt the message
   * [x]  Required: Verify the message
-  * [ ]  Required: Include a response message in this README:
+  * [x]  Required: Include a response message in this README:
   message: zcFocfZ3CDHtct1gwiaVOSipfwAykLeAg9zUWuFGeB2HOgf5A+5K6NmGh2UecJt1NEYiLvFDBOfv3Jq330rOVc273PYJ+TMBNWDZuEvjIe+OJbAAemyMnR1akgVZaMAqG94k9g+FuB0tXunClCipgmWOIWZdKysofrUoO0B3P235onRo0auBuZ6DcPPt3YvCja2iNSq+hur64ZQaBWU/sHBbko6g+2TIXAh8Y0vbixndRIEU53nk9XIijKToPnQOfRDqdXWExgs9V/0cvZkgxWQ2akoli3tAOcqtSzslg8AMmJyy8Y5zXikHvOjzLNMa36ZUEeFVnbyrBenmpgFESg==
 
   Signature: FFO7Ziqxhw3yPcnKpyhaNq3E38vG45wlzIP6wmqsFFSHBHqxa9IEf+iHZHnmz/CJFSw6IfnSLt5QECzo5iS3SAfRBEx0y6MzAy3uFDfg2/9LiWIhuENpQ4h2oKwcrikqmJtSjHGRYgxX2bhnyUQ2P0XInyGzpEGiDOohpE8amJiSXoPgk+ENZ7wQXacbRZ8/r3AIQy/7FD342iGwjEc4ls72Wnr0FYRCgyhQpLO84Rgf2lleFVd4k10dgWerfqRldC42Bs+fgRuny4ojt/QHamdrwBySaxSJAHogmIE7hMCI3FNbh43iQ10Lx1ndw3Qsjshydgee+Nju6DNZyM9HLw==
 
 7\. Agent Messages
-  * [ ]  Required: Repair the dropbox code
+  * [x]  Required: Repair the dropbox code
   * [ ]  Required: Repair the messages area
   * [ ]  Required: Display encrypted messages for all agents
   * [ ]  Required: Messages indicate whether the message signature is valid
