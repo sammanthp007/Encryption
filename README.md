@@ -38,7 +38,7 @@ The following **required** functionality is completed:
   * [x]  Required: Repair the messages area
   * [x]  Required: Display encrypted messages for all agents
   * [x]  Required: Messages indicate whether the message signature is valid
-  * [ ]  Required: Your messages are automatically decrypted
+  * [x]  Required: Your messages are automatically decrypted
 
 8\. Identify the Double Agent
   * [ ]  Required: Decrypt as many email messages as possible

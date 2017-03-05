@@ -6,7 +6,7 @@ if(!isset($_GET['id'])) {
     redirect_to('index.php');
 }
 
-$id = $_GET['id'];
+$id = urlencode($_GET['id']);
 $agent_result = find_agent_by_id($id);
 $agent = db_fetch_assoc($agent_result);
 
@@ -47,9 +47,14 @@ $message_result = find_messages_for($agent['id']);
 $created_at = strtotime($message['created_at']);
 $sender_agent = find_agent_by_id($id=$message['sender_id']);
 $sender = db_fetch_assoc($sender_agent);
-$message_text = $message["cipher_text"];
+$encrypted_mesg = $message["cipher_text"];
+if ($agent['id'] == $current_user['id']) {
+    $message_text = pkey_decrypt($encrypted_mesg,$agent['private_key']);
+} else {
+    $message_text = $encrypted_mesg;
+}
 $signature = $message["signature"];
-$validity = verify_signature($message_text, $signature, $sender['public_key']);
+$validity = verify_signature($encrypted_mesg, $signature, $sender['public_key']);
 if ($validity == 1) {
     $validity_text = "Valid";
 } else {
