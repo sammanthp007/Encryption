@@ -16,14 +16,14 @@ The following **required** functionality is completed:
   +EoN2h1bD20VpPlCpQt9Mz2iwPdWVkeVoS7dmbSloayvO9R8Y9CJpLogoVYBJ3G2
 
 3\. Generate Public-Private Keys
-  * [ ]  Required: Repair the key generator code
-  * [ ]  Required: Generate keys for "johnsteed" and add him to the Agent Directory
+  * [x]  Required: Repair the key generator code
+  * [x]  Required: Generate keys for "johnsteed" and add him to the Agent Directory
 
 4\. Asymmetric Encrypt/Decrypt
-  * [ ]  Required: Repair the asymmetric encrypt and decrypt code
+  * [x]  Required: Repair the asymmetric encrypt and decrypt code
 
 5\. Create/Verify Signature
-  * [ ]  Required: Repair the create and verify signature code
+  * [x]  Required: Repair the create and verify signature code
   
 6\. Encrypted Message 2
   * [ ]  Required: Decrypt the message
