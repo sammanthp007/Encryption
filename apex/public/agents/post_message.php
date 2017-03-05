@@ -8,17 +8,30 @@
       redirect_to('index.php');
     }
 
-    // I'm sorry, did you need this code? ;)
-    // Guess you'll just have to re-write it.
-    // With love, Dark Shadow
-    
+    // get the recipient
+    $id = urlencode($_GET['id']);
+    $agent_result = find_agent_by_id($id);
+    $recipient_agent = db_fetch_assoc($agent_result);
+
+    // get the sender, is global from initialize
+    $sender_agent = $current_user;
+
+    // get the text
+    $plaintext = u($_POST['plain_text']);
+
+    // encrypt the message
+    $encrypted_text = pkey_encrypt($plaintext, $recipient_agent[public_key]);
+
+    // sign the message
+    $signature = create_signature($encrypted_text, $sender_agent[private_key]);
+
     $message = [
-      'sender_id' => $sender['id'],
-      'recipient_id' => $agent['id'],
+      'sender_id' => $sender_agent['id'],
+      'recipient_id' => $recipient_agent['id'],
       'cipher_text' => $encrypted_text,
       'signature' => $signature
-    ];
-    
+  ];
+
     $result = insert_message($message);
     if($result === true) {
       // Just show the HTML below.
@@ -42,7 +55,14 @@
     <link rel="stylesheet" media="all" href="<?php echo DOC_ROOT . '/includes/styles.css'; ?>" />
   </head>
   <body>
-    
+<?php 
+  echo $id;
+  //foreach ($sender_agent as $det) {
+    //  echo $det; 
+    // }
+    echo h($plaintext);
+  echo $sender_agent[codename];
+?>
     <a href="<?php echo url_for('/agents/index.php'); ?>">Back to List</a>
     <br/>
 
