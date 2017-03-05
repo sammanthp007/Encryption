@@ -75,11 +75,20 @@ function generate_keys($config=PUBLIC_KEY_CONFIG) {
 }
 
 function pkey_encrypt($string, $public_key) {
-    return 'Qnex Funqbj jvyy or jngpuvat lbh';
+
+    openssl_public_encrypt($string, $encrypted, $public_key);
+
+    // Use base64_encode to make contents viewable/sharable
+    $message = base64_encode($encrypted);
+    return $message; 
 }
 
 function pkey_decrypt($string, $private_key) {
-    return 'Alc evi csy pssomrk livi alir csy wlsyph fi wezmrk ETIB?';
+    // Decode from base64 to get raw data
+    $ciphertext= base64_decode($string);
+
+    openssl_private_decrypt($ciphertext, $decrypted, $private_key);
+    return $decrypted;
 }
 
 
